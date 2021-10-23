@@ -34,7 +34,7 @@ public class MainViewController implements Initializable {
 	
 	@FXML
 	public void onMenuItemDeparmentAction() {
-		System.out.println("TesteDept");
+		loadView("/gui/DepartmentList.fxml");
 	}
 	
 	@FXML
@@ -47,8 +47,7 @@ public class MainViewController implements Initializable {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			VBox newVBox = loader.load();
 			
-			Scene mainScene = Main.getMainScene();
-			VBox mainVBox = (VBox) ((ScrollPane) mainScene.getRoot()).getContent();
+			VBox mainVBox = (VBox) ((ScrollPane) Main.getMainScene().getRoot()).getContent();
 			
 			Node mainMenu = mainVBox.getChildren().get(0);
 			mainVBox.getChildren().clear();
